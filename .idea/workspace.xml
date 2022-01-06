@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="51db3abb-24ab-4629-a07e-2bac17f41286" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Blog_Server/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/BlogBeApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/controllers/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/controllers/BaseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/controllers/ContactController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/controllers/PostCommentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/controllers/PostController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/controllers/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/dto/ContactDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/dto/PostCommentDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/dto/PostDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/dto/ResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/dto/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/exceptions/CustomExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/exceptions/DuplicateException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/exceptions/ErrorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/exceptions/NotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/filter/JwtRequestFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/models/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/models/Contact.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/models/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/models/PostComment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/payload/AuthenticationRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/payload/AuthenticationResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/repository/ContactRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/repository/PostCommentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/repository/PostRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/services/IAuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/services/IContactService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/services/IPostCommentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/services/IPostService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/services/IUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/services/MyUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/services/imp/AuthServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/services/imp/ContactServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/services/imp/PostCommentServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/services/imp/PostServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/services/imp/UserServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/utils/ConvertObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/utils/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/java/com/example/blog_be/utils/ResponseMessageEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog_Server/src/test/java/com/example/blog_be/BlogBeApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="23JdedOUIEiYhUJC3FcIMKRcPLY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51db3abb-24ab-4629-a07e-2bac17f41286" name="Changes" comment="" />
+      <created>1641456220788</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641456220788</updated>
+      <workItem from="1641456222704" duration="338000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
