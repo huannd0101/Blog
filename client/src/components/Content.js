@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import useInput from "../hooks/use-input";
 import postService from "../services/post-service";
 import BoxPost from "./BoxPost";
+
+const keyValidate = (value) => value !== "";
 
 function Content(props) {
   const [posts, setPosts] = useState();
@@ -10,6 +13,22 @@ function Content(props) {
       setPosts(res.result);
     });
   }, []);
+
+  const {
+    value: enterKey,
+    isValid: enterKeyIsValid,
+    hasError: keyInputHasError,
+    valueChangeHandler: keyChangeHandler,
+    inputBlurHandler: keyBlurHandler,
+  } = useInput(keyValidate);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    postService.searchPostByKey(enterKey).then((res) => {
+      setPosts(res.result);
+    });
+  };
+
   return (
     <div id="content" className="site-content">
       <div id="primary" className="content-area column two-thirds">
@@ -30,8 +49,16 @@ function Content(props) {
       <div id="secondary" className="column third">
         <div id="sidebar-1" className="widget-area" role="complementary">
           <aside id="search" className="widget widget_recent_entries">
-            <form action="" method="post">
-              <input type="text" className="" />
+            <form onSubmit={submitHandler}>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name *"
+                className="form-control"
+                value={enterKey}
+                onBlur={keyBlurHandler}
+                onChange={(e) => keyChangeHandler(e.target.value)}
+              />
               <button type="submit">Search</button>
             </form>
           </aside>

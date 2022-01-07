@@ -26,6 +26,11 @@ public class PostServiceImp implements IPostService {
     }
 
     @Override
+    public List<Post> searchPostByKey(String key) {
+        return postRepository.findAllByTitleContainingOrContentContaining(key, key);
+    }
+
+    @Override
     public Post getPostById(Long id) {
         Optional<Post> post = postRepository.findById(id);
         if(post.isEmpty()) {

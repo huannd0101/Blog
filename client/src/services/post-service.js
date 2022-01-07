@@ -19,6 +19,15 @@ class PostService extends HttpService {
       throw new Error(err.message);
     }
   }
+
+  async searchPostByKey(key) {
+    try {
+      const res = await this.get(`posts/search?key=${key}`);
+      return res.data;
+    } catch (err) {
+      throw new Error(err.message);
+    }
+  }
 }
 
 export default new PostService();

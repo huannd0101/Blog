@@ -15,5 +15,4 @@ public class ContactDTO {
     private String name;
     private String email;
     private String message;
-//    C/C++, java, js, html, css, scss, dart, C#, winform, asp.net, java web, android, kotlin, nodejs, reactjs, python core
 }

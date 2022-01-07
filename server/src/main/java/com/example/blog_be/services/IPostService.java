@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface IPostService {
     List<Post> getAllPost();
+    List<Post> searchPostByKey(String key);
     Post getPostById(Long id);
     Post createNewPost(PostDTO postDTO, Long userId);
     Post editPostById(Long id, PostDTO postDTO);

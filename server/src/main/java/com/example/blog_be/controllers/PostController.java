@@ -41,4 +41,9 @@ public class PostController extends BaseController<Post> {
     public ResponseEntity<?> deletePostById(@PathVariable(name = "id") Long id) {
         return this.resSuccess(postService.deletePostById(id));
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<?> searchPostByKey(@RequestParam("key") String key) {
+        return this.resListSuccess(postService.searchPostByKey(key));
+    }
 }
