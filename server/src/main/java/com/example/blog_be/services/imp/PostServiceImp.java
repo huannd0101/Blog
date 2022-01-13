@@ -3,6 +3,7 @@ package com.example.blog_be.services.imp;
 import com.example.blog_be.dto.PostDTO;
 import com.example.blog_be.exceptions.NotFoundException;
 import com.example.blog_be.models.Post;
+import com.example.blog_be.models.User;
 import com.example.blog_be.repository.PostRepository;
 import com.example.blog_be.services.IPostService;
 import com.example.blog_be.services.IUserService;
@@ -42,9 +43,12 @@ public class PostServiceImp implements IPostService {
     @Override
     public Post createNewPost(PostDTO postDTO, Long userId) {
         Post post = modelMapper.map(postDTO, Post.class);
-        post.setUser(userService.getUserById(userId));
+        User user = userService.getUserById(userId);
 
-        return postRepository.save(post);
+        Post newPost = postRepository.save(post);
+        user.addRelationPost(newPost);
+        userService.save(user);
+        return postRepository.save(newPost);
     }
 
     @Override
@@ -63,7 +67,17 @@ public class PostServiceImp implements IPostService {
         if(post.isEmpty()) {
             throw new NotFoundException("Can not find post by id: " + id);
         }
-        postRepository.delete(post.get());
+        User user = post.get().getUser();
+
+        user.deleteRelationPost(post.get());
+        userService.save(user);
+
+        postRepository.deleteById(post.get().getId());
         return post.get();
+    }
+
+    @Override
+    public Post save(Post post) {
+        return postRepository.save(post);
     }
 }

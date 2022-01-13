@@ -27,4 +27,9 @@ public class ContactController extends BaseController<Contact> {
     public ResponseEntity<?> createNewContact(@RequestBody ContactDTO contactDTO){
         return this.resSuccess(service.createNewContact(contactDTO));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteContactById(@PathVariable(name = "id") Long id) {
+        return this.resSuccess(service.deleteContactById(id));
+    }
 }

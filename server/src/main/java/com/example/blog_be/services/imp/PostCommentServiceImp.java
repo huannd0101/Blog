@@ -2,6 +2,7 @@ package com.example.blog_be.services.imp;
 
 import com.example.blog_be.dto.PostCommentDTO;
 import com.example.blog_be.exceptions.NotFoundException;
+import com.example.blog_be.models.Post;
 import com.example.blog_be.models.PostComment;
 import com.example.blog_be.repository.PostCommentRepository;
 import com.example.blog_be.services.IPostCommentService;
@@ -41,8 +42,11 @@ public class PostCommentServiceImp implements IPostCommentService {
     @Override
     public PostComment createNewPostComment(PostCommentDTO postCommentDTO, Long idPost) {
         PostComment postComment = modelMapper.map(postCommentDTO, PostComment.class);
-        postComment.setPost(postService.getPostById(idPost));
-        return postCommentRepository.save(postComment);
+//        addRelationPostComment
+        Post post = postService.getPostById(idPost);
+        PostComment postCommentNew = postCommentRepository.save(postComment);
+        post.addRelationPostComment(postCommentNew);
+        return postCommentRepository.save(postCommentNew);
     }
 
     @Override
@@ -54,12 +58,17 @@ public class PostCommentServiceImp implements IPostCommentService {
         return postCommentRepository.save(ConvertObject.convertPostCommentDTOToComment(postComment.get(), postCommentDTO));
     }
 
+
     @Override
     public PostComment deleteById(Long id) {
         Optional<PostComment> postComment = postCommentRepository.findById(id);
         if(postComment.isEmpty()) {
             throw new NotFoundException("Can't find postComment by id " + id);
         }
+        Post post = postComment.get().getPost();
+
+        post.deleteRelationPost(postComment.get());
+        postService.save(post);
         postCommentRepository.deleteById(id);
         return postComment.get();
     }

@@ -28,6 +28,26 @@ class PostService extends HttpService {
       throw new Error(err.message);
     }
   }
+
+  async createNewPost(id, postDTO) {
+    try {
+      const res = await this.post(`posts/${id}`, {
+        body: postDTO,
+      });
+      return res.data;
+    } catch (err) {
+      throw new Error(err.message);
+    }
+  }
+
+  async deletePostById(id) {
+    try {
+      const res = await this.delete(`posts/${id}`);
+      return res.data;
+    } catch (err) {
+      throw new Error(err.message);
+    }
+  }
 }
 
 export default new PostService();

@@ -1,4 +1,4 @@
-const prefix = "tumi";
+const prefix = "blog";
 
 class StorageService {
   constructor() {

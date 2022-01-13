@@ -1,0 +1,18 @@
+body {
+  margin: 0 !important;
+  border: 0 !important;
+}
+
+html {
+  border: 0 !important;
+  font-size: 16px !important;
+}
+
+.item-logout {
+  padding: 20px 0 !important;
+  cursor: pointer;
+}
+
+.item-logout:hover {
+  color: red;
+}

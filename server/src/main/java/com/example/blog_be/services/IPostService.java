@@ -12,4 +12,5 @@ public interface IPostService {
     Post createNewPost(PostDTO postDTO, Long userId);
     Post editPostById(Long id, PostDTO postDTO);
     Post deletePostById(Long id);
+    Post save(Post post);
 }

@@ -67,4 +67,9 @@ public class UserServiceImp implements IUserService {
 
         return userRepository.save(ConvertObject.convertUserDTOToUser(user.get(), userDTO));
     }
+
+    @Override
+    public User save(User user) {
+        return userRepository.save(user);
+    }
 }
