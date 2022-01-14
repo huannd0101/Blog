@@ -71,7 +71,7 @@ function PostDetail(props) {
               </div>
             </header>
             <div className="entry-content">
-              <p>{post.content}</p>
+              <div dangerouslySetInnerHTML={{__html: post.content}}></div>
             </div>
             <footer className="entry-footer">
               <span className="cat-links">Posted in audio, embed, media</span>

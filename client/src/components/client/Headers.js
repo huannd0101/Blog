@@ -12,7 +12,7 @@ function Headers() {
         <h2 className="site-description">Minimalist Portfolio HTML Template</h2>
       </div>
       <nav id="site-navigation" className="main-navigation">
-        <button className="menu-toggle">Menu</button>
+        {/* <button className="menu-toggle">Menu</button> */}
         <a className="skip-link screen-reader-text" href="#content">
           Skip to content
         </a>

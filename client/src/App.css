@@ -2085,7 +2085,7 @@ ul.shortcode-archive li {
     padding: 0.5em 0;
     text-decoration: none;
   }
-  .main-navigation ul {
+  /* .main-navigation ul {
     display: none;
   }
   .main-navigation li {
@@ -2094,7 +2094,7 @@ ul.shortcode-archive li {
     position: relative;
     padding: 0;
     text-align: center;
-  }
+  } */
   .main-navigation li:last-child {
     border-bottom: 0;
   }

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ReactQuill from "react-quill";
 import "../../../node_modules/react-quill/dist/quill.snow.css";
 import "../../Assets/admin/css/ql-editor.css";
@@ -7,12 +7,22 @@ import postService from "../../services/post-service";
 import storageService from "../../services/storage.service";
 
 const CreatePost = (props) => {
+  let postID = props.match.params.id;
   const [txtContent, setTxtContent] = useState();
   const refTitle = useRef();
+
+  useEffect(() => {
+    if (postID) {
+      postService.getPostById(postID).then((data) => {
+        refTitle.current.value = data.result.title;
+        setTxtContent(data.result.content);
+      });
+    }
+  }, []);
+
   let curUser = storageService.getObject(Constants.userInfo);
   const handleChange = (e) => {
     setTxtContent(e);
-    console.log(e);
   };
 
   const submitHandler = () => {
@@ -25,19 +35,35 @@ const CreatePost = (props) => {
       alert(id);
       return;
     }
-    postService
-      .createNewPost(id, {
-        title: refTitle.current.value,
-        content: txtContent,
-        hightlight: true,
-      })
-      .then((data) => {
-        setTxtContent("");
-        refTitle.current.value = "";
-      })
-      .catch((data) => {
-        alert("error");
-      });
+    if (postID) {
+      postService
+        .editPostById(postID, {
+          id: postID,
+          title: refTitle.current.value,
+          content: txtContent,
+          hightlight: true,
+        })
+        .then((data) => {
+          alert("Save successfully");
+        })
+        .catch((data) => {
+          alert("error");
+        });
+    } else {
+      postService
+        .createNewPost(id, {
+          title: refTitle.current.value,
+          content: txtContent,
+          hightlight: true,
+        })
+        .then((data) => {
+          setTxtContent("");
+          refTitle.current.value = "";
+        })
+        .catch((data) => {
+          alert("error");
+        });
+    }
   };
 
   return (

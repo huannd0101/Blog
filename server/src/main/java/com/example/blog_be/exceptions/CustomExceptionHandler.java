@@ -20,4 +20,10 @@ public class CustomExceptionHandler {
     public ErrorResponse handleDuplicateException(DuplicateException ex, WebRequest req) {
         return new ErrorResponse(HttpStatus.BAD_REQUEST.value(), ex.getMessage());
     }
+
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ErrorResponse handleException(Exception ex, WebRequest req) {
+        return new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage());
+    }
 }

@@ -89,6 +89,11 @@ const AdminContent = (props) => {
                     component={CreatePost}
                     exact
                   />
+                  <Route
+                    path={"/admin/edit-post/:id"}
+                    component={CreatePost}
+                    exact
+                  />
                   <Route path={"/admin/posts"} component={ListPost} exact />
                   <Route
                     path={"/admin/post-comments"}

@@ -48,6 +48,17 @@ class PostService extends HttpService {
       throw new Error(err.message);
     }
   }
+
+  async editPostById(id, postDTO) {
+    try {
+      const res = await this.patch(`posts/${id}`, {
+        body: postDTO,
+      });
+      return res.data;
+    } catch (err) {
+      throw new Error(err.message);
+    }
+  }
 }
 
 export default new PostService();

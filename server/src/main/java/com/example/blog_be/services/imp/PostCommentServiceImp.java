@@ -44,9 +44,9 @@ public class PostCommentServiceImp implements IPostCommentService {
         PostComment postComment = modelMapper.map(postCommentDTO, PostComment.class);
 //        addRelationPostComment
         Post post = postService.getPostById(idPost);
-        PostComment postCommentNew = postCommentRepository.save(postComment);
-        post.addRelationPostComment(postCommentNew);
-        return postCommentRepository.save(postCommentNew);
+
+        postComment.setPost(post);
+        return postCommentRepository.save(postComment);
     }
 
     @Override

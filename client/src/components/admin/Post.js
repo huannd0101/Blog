@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Post = (props) => {
   let item = props.obj;
@@ -13,6 +14,14 @@ const Post = (props) => {
       {/* <td>✔</td> */}
       <td>{item.createdAt}</td>
       <td>
+        <NavLink
+          style={{ margin: "0 5px" }}
+          className="btn btn-success"
+          to={"/admin/edit-post/" + item.id}
+        >
+          Edit
+        </NavLink>
+
         <button
           onClick={() => {
             if (window.confirm("Delete the item?")) {
